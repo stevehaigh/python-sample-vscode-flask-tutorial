@@ -48,8 +48,9 @@ stages:
       displayName: "Install requirements"
 
     - script: |
-        displayName: 'Run tests'
         python tests.py
+      workingDirectory: $(projectRoot)
+      displayName: 'Run tests'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
