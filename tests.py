@@ -22,6 +22,10 @@ class BasicTests(unittest.TestCase):
     def test_page_not_found(self):
         response = self.app.get('/foo/', follow_redirects=True)
         self.assertEqual(response.status_code, 404)
+
+    def test_that_fails(self):
+        response = self.app.get('/', follow_redirects=True)
+        self.assertEqual(response.status_code, 503)
  
 if __name__ == "__main__":
     unittest.main()
